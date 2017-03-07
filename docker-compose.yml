@@ -13,6 +13,9 @@ services:
     # Do not start application container until postgres service is started
     depends_on:
       - postgres
+    labels:
+      com.microsoft.acs.dcos.marathon.healthcheck.path: "/"
+
 
   postgres:
     # Build database using Dockerfile contained in postgres subfolder
@@ -22,3 +25,5 @@ services:
     
     ports:
       - "5432:5432"
+    labels:
+      com.microsoft.acs.dcos.marathon.healthcheck.path: "/"
