@@ -8,6 +8,8 @@ services:
     # Name image
     image: ethercis-app
     # Map application container port 8080 to Docker port 8080
+    labels:
+      com.microsoft.acs.dcos.marathon.healthcheck.path: "/"
     ports:
       - "8080:8080"
     # Do not start application container until postgres service is started
@@ -18,7 +20,7 @@ services:
     # Build database using Dockerfile contained in postgres subfolder
     build: ./postgres
     labels:
-      com.microsoft.acs.dcos.marathon.healthcheck: "true"
+      com.microsoft.acs.dcos.marathon.healthcheck.path: "/"
     # Name image
     image: ethercis-db
     
