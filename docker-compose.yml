@@ -17,6 +17,8 @@ services:
   postgres:
     # Build database using Dockerfile contained in postgres subfolder
     build: ./postgres
+    labels:
+      com.microsoft.acs.dcos.marathon.healthcheck: "true"
     # Name image
     image: ethercis-db
     
