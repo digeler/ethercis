@@ -4,7 +4,7 @@ volumes:
   data:
     driver: azurefile
     driver_opts:
-      share: datashare
+      share: newshare
 
 services:
 
