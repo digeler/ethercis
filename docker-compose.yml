@@ -1,5 +1,11 @@
 version: "2"
 
+volumes:
+  data:
+    driver: azurefile
+    driver_opts:
+      share: datashare
+
 services:
 
   app:
@@ -23,6 +29,12 @@ services:
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
     # Name image
     image: ethercis-db
+    volumes:
+      - data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ethercis
     ports:
       - "5432:5432"
     
