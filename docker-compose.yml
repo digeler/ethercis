@@ -31,6 +31,7 @@ services:
     image: ethercis-db
     volumes:
       - data:/var/lib/postgresql/data
+    #Environment variables configuring Postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
