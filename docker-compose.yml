@@ -2,9 +2,6 @@ version: "2"
 
 volumes:
   data:
-    driver: azurefile
-    driver_opts:
-      share: newshare
 
 services:
 
