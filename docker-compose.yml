@@ -1,5 +1,6 @@
 version: "2"
 
+#Definition for PostgreSQL data volume
 volumes:
   data:
 
