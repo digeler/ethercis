@@ -25,6 +25,7 @@ services:
     build: ./postgres
     labels:
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
+      constraint:node: "=node-1"
     # Name image
     image: ethercis-db
     #Volume for PostreSQL data
