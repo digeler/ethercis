@@ -25,6 +25,7 @@ services:
     build: ./postgres
     labels:
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
+      - "constraint:node==node-1"
     # Name image
     image: ethercis-db
     #Volume for PostreSQL data
@@ -35,6 +36,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: ethercis
+      - "constraint:node==node-1"
     ports:
       - "5432:5432"
     
