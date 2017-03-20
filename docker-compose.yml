@@ -35,7 +35,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: ethercis
-      - "constraint:node==node-1"
+      constraint:node: "=node-1"
     ports:
       - "5432:5432"
     
