@@ -27,7 +27,7 @@ services:
       com.microsoft.acs.dcos.marathon.healthcheck: "true"
     # Name image
     image: ethercis-db
-    #Volume for postreSQL data
+    #Volume for PostreSQL data
     volumes:
       - data:/var/lib/postgresql/data
     #Environment variables configuring Postgres
